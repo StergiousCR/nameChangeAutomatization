@@ -1,0 +1,117 @@
+/*  Variables */
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --no-space-around: 0;
+}
+
+
+/* Seteadores mundiales */
+
+html {
+    box-sizing: border-box;
+    font-size: 65.5%;
+    font-family: 'Roboto Slab', serif;
+    background-color:  #34495e ;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+  
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Utilidades */
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Header */
+.banner-header {
+    padding: 3rem 0;
+    background-color: var(--black);
+    border-bottom-right-radius: .7rem;
+    border-bottom-left-radius: .7rem;
+    border: .2rem solid var(--white);
+    border-top: none;
+}
+.banner-header h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--white);
+}
+.d-none {
+    display: none;
+}
+
+
+ /* Texto Change  */
+.txt-change {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--white);
+}
+
+
+/*  Formulario  */
+#form-cliente {
+    font-size: 2rem;
+    text-align: center;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#form-cliente label {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: .8rem;
+    display: inline-block;
+    color: var(--white);
+    border: .5rem solid var(--black);
+    background-color: transparent;
+    font-size: 2.3rem;
+}
+#form-cliente input {
+    height: 4.5rem;
+}
+#form-cliente button {
+    background-image: linear-gradient(to right, rgb(0, 0, 0,1), rgba(0, 0, 0, 1));
+    color: var(--white);
+    margin-top: 1rem;
+    padding: 1.5rem;
+    width: 20rem;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+/* Footer */
+.footer {
+    background-color: var(--black);
+    border: .2rem solid var(--white);
+    border-bottom: none;
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+    align-self: flex-end;
+}
+.footer p {
+    margin: var(--no-space-around);
+    padding-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--white);
+}
+.footer p:first-child {
+    padding-top: 1.5rem;
+}
