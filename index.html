@@ -20,25 +20,42 @@
     </header>
 
 
-    <section class="container txt-change">
-        <h1>Hola, <span id="txt-change"></span></h1>
-    </section>
-
     <!-- Aca se creara el formulario  -->
     <main>
         <form id="form-cliente" class="container">
             
             <label for="firstTxt">Type your name:</label>
-            <input id="firstTxt" type="text">
+            <div id="input-name">
+                <img src="/img/usuario-de-perfil.png" alt="">
+                <input id="firstTxt" type="text">
+            </div>
             <button id="addBtn" type="button"> Add name </button>
 
         </form> 
     </main>
 
 
+    <section class="container txt-change">
+        <h1>Hello, <span id="txt-change"></span></h1>
+        <div id="greeting" class="hideGreeting">
+            <p>I'm Abraham Garos :)</p>
+            <p>> Welcome to my page <</p>
+        </div>
+        
+    </section>
+
+
     <footer class="container footer">
-        <p>Stergious CR</p>
-        <p>Costa Rica</p>
+        <div class="p">
+            <p>Abraham Garos Salazar</p>
+            <p>Costa Rica</p>
+        </div>
+        
+        <div class="social-media">
+            <a href="https://www.instagram.com/stergious_cr/?hl=es-la"><img src="/img/instagram.png" alt=""></a>
+            <a href="https://github.com/StergiousCR"><img id="insta-logo" src="/img/logotipo-de-github.png" alt=""></a>
+        </div>
+        
     </footer>
     
     <script src="/app.js"></script>
