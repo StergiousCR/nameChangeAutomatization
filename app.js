@@ -1,6 +1,6 @@
 // Variables
 const firstTxt = document.querySelector('#firstTxt'); // Aca me taigo el input
-const txtChange = document.querySelector('#txt-change'); // Aca me traigo el span o donde va el nombre ingresado
+const personName = document.querySelector('#person-name'); // Aca me traigo el span o donde va el nombre ingresado
 const greeting = document.querySelector('#greeting'); // Este lo traigo oculto para luego cambiarle la clase nada mas
 const addBtn = document.querySelector('#addBtn');
 
@@ -18,7 +18,7 @@ addBtn.classList.add('d-none');
 
 function validacionInput(e) {
     
-    txtChange.textContent = e.target.value;
+    personName.textContent = e.target.value;
 
     if(firstTxt.value != '') {
         showGreeting();
