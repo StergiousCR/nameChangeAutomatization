@@ -41,7 +41,7 @@ img {
 
 /* Header */
 .banner-header {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
     background-color: var(--black);
     border-bottom-right-radius: .7rem;
     border-bottom-left-radius: .7rem;
@@ -50,42 +50,64 @@ img {
 }
 .banner-header h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--white);
 }
 .d-none {
     display: none;
 }
 
+/* Agregar nombre persona  */
+.person-name {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+.person-name h1 {
+    margin-bottom: 4rem;
+}
+.hideGreeting p {  /* Este aun no se ejecuta ya que se hace hasta que exista el boton */
+    display: none;
+}
+.showGreeting p {
+    display: block;
+}
+
 /*  Formulario  */
 #form-cliente {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 40rem;
 }
 #form-cliente label {
     margin-bottom: 1.5rem;
     padding: 1rem;
     border-radius: .8rem;
-    display: inline-block;
-    color: var(--white);
+    display: inline;
+    width: 100%;
+    background-color: var(--white);
     border: .5rem solid var(--black);
-    background-color: transparent;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
 }
 #input-name {
     display: flex;
     align-items: flex-start;
+    width: 100%;
 }
 #input-name img {
     width: 4.2rem;
     height: 4.2rem;
     margin-right: 1rem;
     filter: invert(100%);
+    flex: 1;
 }
 #form-cliente input {
+    display: inline-block;
+    flex: 10;
+    border-radius: .8rem;
     height: 4.5rem;
     text-align: center;
     border: .4rem solid var(--black);
@@ -95,23 +117,10 @@ img {
     color: var(--white);
     margin-top: 1rem;
     padding: 1.5rem;
-    width: 20rem;
+    width: 15rem;
     font-weight: 800;
     cursor: pointer;
     border-radius: 2rem;
-}
-
-/* Texto Change  */
-.txt-change {
-    font-size: 2.3rem;
-    text-align: center;
-    color: var(--white);
-}
-.hideGreeting p {  /* Este aun no se ejecuta ya que se hace hasta que exista el boton */
-    display: none;
-}
-.showGreeting p {
-    display: block;
 }
 
 
@@ -131,14 +140,14 @@ img {
     margin: var(--no-space-around);
     padding-bottom: 1rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--white);
 }
 .footer p:first-child {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 }
 .social-media img {
-    width: 4rem;
+    width: 3rem;
 }
 #insta-logo {
     margin-left: 2rem;
