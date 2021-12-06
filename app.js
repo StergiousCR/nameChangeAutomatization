@@ -5,13 +5,13 @@ const greeting = document.querySelector('#greeting'); // Este lo traigo oculto p
 const addBtn = document.querySelector('#addBtn');
 
 // Variables para debounce
-const validacionDebounced = debounce(validacionInput, 1000);
+const validacionDebounced = debounce(greetingMessage, 1000);
 
 eventListeners(); // Llamo a los escuchadores para que me carguen de una mis funciones primarias
 
 function eventListeners() {
     /* Aca adentro va todo lo que quiero que se ejecute al cargar la pagina por la primera vez mas, que todo los que esperan que se ejecute algo como accionar un input o un boton*/
-    firstTxt.addEventListener('input', validacionDebounced);
+    firstTxt.addEventListener('input', validacionInput);
 }
 
 // Inyectando clases desde Js al HTML
@@ -23,11 +23,12 @@ function validacionInput(e) {
     
     personName.textContent = e.target.value;
 
-    if(firstTxt.value != '') {
-        showGreeting();
-    } else {  
-        hideGreeting();
-    }
+    validacionDebounced();
+    // if(firstTxt.value != '') {
+    //     showGreeting();
+    // } else {  
+    //     hideGreeting();
+    // }
     
 }
 
@@ -40,6 +41,16 @@ function showGreeting() {
     greeting.classList.remove('hideGreeting');
     greeting.classList.add('showGreeting'); 
 }   
+
+function greetingMessage() {
+
+    if(firstTxt.value != '') {
+        showGreeting();
+    } else {  
+        hideGreeting();
+    }
+    
+}
 
 // funciones genericas
 // Funcion DEBOUNCE 
