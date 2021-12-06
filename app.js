@@ -4,6 +4,9 @@ const personName = document.querySelector('#person-name'); // Aca me traigo el s
 const greeting = document.querySelector('#greeting'); // Este lo traigo oculto para luego cambiarle la clase nada mas
 const addBtn = document.querySelector('#addBtn');
 
+// Variables para debounce
+const validacionDebounced = debounce(greetingMessage, 1000);
+
 eventListeners(); // Llamo a los escuchadores para que me carguen de una mis funciones primarias
 
 function eventListeners() {
@@ -20,11 +23,12 @@ function validacionInput(e) {
     
     personName.textContent = e.target.value;
 
-    if(firstTxt.value != '') {
-        showGreeting();
-    } else {  
-        hideGreeting();
-    }
+    validacionDebounced();
+    // if(firstTxt.value != '') {
+    //     showGreeting();
+    // } else {  
+    //     hideGreeting();
+    // }
     
 }
 
@@ -35,5 +39,43 @@ function hideGreeting() {
     
 function showGreeting() {
     greeting.classList.remove('hideGreeting');
-    greeting.classList.add('showGreeting');
+    greeting.classList.add('showGreeting'); 
 }   
+
+function greetingMessage() {
+
+    if(firstTxt.value != '') {
+        showGreeting();
+    } else {  
+        hideGreeting();
+    }
+    
+}
+
+// funciones genericas
+// Funcion DEBOUNCE 
+// Se va a crear una funcion que se pueda usr muchas veces por eso hay que pasar de parametro la funcion que se ocupa
+
+function debounce(func, timeout){ // aca recibe el parametro del nombre de la funcion y luego el timer, esto para poder controlar desde que se declara hasta el timer
+
+    let timeoutID; // Aca creamos el ID para reconocer cuantas veces se ha aplicado la funcion y se reinicie y vuelva al inicio
+
+    return function() {
+        if(timeoutID) {
+            clearTimeout(timeoutID);
+        }
+        const context = this;
+        const args = arguments;
+        timeoutID = setTimeout( () => {
+            func.apply(context, args)
+        }, timeout)
+    } 
+
+
+    // return (...args) => {
+    //   clearTimeout(timeoutID);
+    //   timeoutID = setTimeout(() => { func.apply(this, args); }, timeout);
+    // };
+
+}
+
